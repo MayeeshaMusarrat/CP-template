@@ -4,29 +4,20 @@ TASK: milk2
 LANG: C++
 */
 
-#include <ext/rope>
 #include<bits/stdc++.h>
 #define endl '\n'
-#define ll long long
+#define ll long long int
 #define pb push_back
+#define rep(i,a,b,c) for(long long int i=a;i<b;i=i+c)
+#define f(i,a,b,c) for(int i=a;i<=b;i=i+c)
+#define sorts(s) sort(s.begin(),s.end())
+#define rev(s) reverse(s.begin(),s.end())
 #define yes cout<<"YES"<<endl;
 #define no cout<<"NO"<<endl;
-
-// Bitmasks // a --> main variable, b --> j-th bit
-#define BIT_SET(a,b) ((a) |= (1ULL<<(b)))
-#define BIT_CLEAR(a,b) ((a) &= ~(1ULL<<(b)))
-#define BIT_FLIP(a,b) ((a) ^= (1ULL<<(b)))
-#define BIT_CHECK(a,b) (!!((a) & (1ULL<<(b))))
-#define BITMASK_SET(x, mask) ((x) |= (mask))
-#define BITMASK_CLEAR(x, mask) ((x) &= (~(mask)))
-#define BITMASK_FLIP(x, mask) ((x) ^= (mask))
-#define BITMASK_CHECK_ALL(x, mask) (!(~(x) & (mask)))
-#define BITMASK_CHECK_ANY(x, mask) ((x) & (mask))
-
+#define mod 1000000007
 
 #define ios ios::sync_with_stdio(false); cin.tie(NULL);
 
-using namespace __gnu_cxx;
 using namespace std;
 
 void __print(int x) {cerr << x;}
@@ -99,17 +90,49 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 //    return sm;
 //}
 
+istream& operator>>(istream& in, __int128& n)
+{
+    string s;
+    in>>s;
+    n=0;
+    rep(i,0,s.length(),1) n=n*10+(s[i]-'0');
+    return in;
+}
+
+ostream& operator<<(ostream& out, const __int128& n)
+{
+    if (n==0)
+    {
+        out<<0;
+        return out;
+    }
+    string s="";
+    __int128 num=n;
+    if (num<0)
+    {
+        out<<'-';
+        num=-num;
+    }
+    while (num>0)
+    {
+        s+=(num%10)+'0';
+        num/= 10;
+    }
+    reverse(s.begin(),s.end());
+    out<<s;
+    return out;
+}
 
 void solve()
 {
-    
+
 }
 
 int main()
 {
     ios
     ll t=1;
-    //cin>>t;
+    cin>>t;
     for(ll tc=1;tc<=t;++tc)
     {
        // cout<<"Case "<<tc<<": "<<endl;
